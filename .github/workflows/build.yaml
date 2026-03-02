@@ -29,6 +29,6 @@ jobs:
 
       - name: Validate index consistency
         run: |
-          export PATH="${$HOME/.krew/bin:-$HOME/.krew}/bin:$PATH"
+          export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
           kubectl krew install --manifest=plugins/arcane.yaml
 
