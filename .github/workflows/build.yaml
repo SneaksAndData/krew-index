@@ -11,6 +11,10 @@ env:
 
 jobs:
   validate_commit:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        arch: [amd64, arm64]
     name: Validate commit
     runs-on: ubuntu-latest
     if: ${{ github.ref != 'refs/heads/main' }}
