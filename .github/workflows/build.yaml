@@ -28,5 +28,7 @@ jobs:
           ./"${KREW}" install krew
 
       - name: Validate index consistency
-        run: kubectl krew install --manifest=plugins/arcane.yaml
+        run: |
+          export PATH="${$HOME/.krew/bin:-$HOME/.krew}/bin:$PATH"
+          kubectl krew install --manifest=plugins/arcane.yaml
 
