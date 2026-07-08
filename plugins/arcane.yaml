@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: arcane
 spec:
-  version: v0.1.4
+  version: v0.1.5
   platforms:
 
     - bin: kubectl-plugin-arcane
