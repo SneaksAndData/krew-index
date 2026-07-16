@@ -59,4 +59,6 @@ jobs:
           if [ "$manifest_version" != "$installed_version" ]; then
             echo "Version mismatch: manifest=$manifest_version, installed=$installed_version"
             exit 1
+          else
+            echo "Version matches manifest version: $installed_version"
           fi
