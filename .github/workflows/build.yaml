@@ -34,5 +34,29 @@ jobs:
       - name: Validate index consistency
         run: |
           export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-          kubectl krew install --manifest=plugins/arcane.yaml
+          if ! krew_install_output="$(kubectl krew install --manifest=plugins/arcane.yaml 2>&1)"; then
+            echo "Raw output (kubectl krew install): $krew_install_output"
+            exit 1
+          fi
+          echo "Raw output (kubectl krew install): $krew_install_output"
 
+          manifest_version_raw="$(awk '$1=="version:" {print $2; exit}' plugins/arcane.yaml)"
+          echo "Raw output (manifest version field): $manifest_version_raw"
+          manifest_version="${manifest_version_raw#v}"
+
+          if ! arcane_version_output="$(kubectl arcane version 2>&1)"; then
+            echo "Raw output (kubectl arcane version): $arcane_version_output"
+            exit 1
+          fi
+          echo "Raw output (kubectl arcane version): $arcane_version_output"
+          installed_version="$(echo "$arcane_version_output" | sed -nE 's/.*Version: ([0-9]+\.[0-9]+\.[0-9]+).*/\1/p')"
+
+          if [ -z "$installed_version" ]; then
+            echo "Unable to parse plugin version from output: $arcane_version_output"
+            exit 1
+          fi
+
+          if [ "$manifest_version" != "$installed_version" ]; then
+            echo "Version mismatch: manifest=$manifest_version, installed=$installed_version"
+            exit 1
+          fi
