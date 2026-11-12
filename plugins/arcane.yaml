@@ -46,9 +46,9 @@ spec:
           arch: amd64
 
     - bin: kubectl-plugin-arcane
-      uri:
+      uri: https://github.com/SneaksAndData/kubectl-plugin-arcane/releases/download/v0.1.12/kubectl-plugin-arcane_0.1.12_windows_amd64.tar.gz
       sha256: 6a9319f1586bcaed1e84af960ac57f30c8795d0540c9ba3c5ec6b4f73ed7b612
-      files: https://github.com/SneaksAndData/kubectl-plugin-arcane/releases/download/v0.1.12/kubectl-plugin-arcane_0.1.12_windows_amd64.tar.gz
+      files:
         - from: LICENSE
           to: .
         - from: kubectl-plugin-arcane
