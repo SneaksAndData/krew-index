@@ -3,12 +3,12 @@ kind: Plugin
 metadata:
   name: arcane
 spec:
-  version: v0.1.11
+  version: v0.1.12
   platforms:
 
     - bin: kubectl-plugin-arcane
-      uri: https://github.com/SneaksAndData/kubectl-plugin-arcane/releases/download/v0.1.11/kubectl-plugin-arcane_0.1.11_darwin_amd64.tar.gz
-      sha256: 2d2246737546ff523db3221888657db19551bfabd580799c7b08cada4be77959
+      uri: https://github.com/SneaksAndData/kubectl-plugin-arcane/releases/download/v0.1.12/kubectl-plugin-arcane_0.1.12_darwin_amd64.tar.gz
+      sha256: 6fd4e219be1dccfceb99b7b5d6949d12d86bc33b8c554c41db602f87a22d5d93
       files:
         - from: LICENSE
           to: .
@@ -20,8 +20,8 @@ spec:
           arch: amd64
 
     - bin: kubectl-plugin-arcane
-      uri: https://github.com/SneaksAndData/kubectl-plugin-arcane/releases/download/v0.1.11/kubectl-plugin-arcane_0.1.11_darwin_arm64.tar.gz
-      sha256: bc3d86cf9b57192dedd142faf30fc57749d0a3f3f569903cd562403af21d48fd
+      uri: https://github.com/SneaksAndData/kubectl-plugin-arcane/releases/download/v0.1.12/kubectl-plugin-arcane_0.1.12_darwin_arm64.tar.gz
+      sha256: a3a0b3fee9fd17dad92bb5b0563e8731c23608d8a17af667e10eb58c4ff127bc
       files:
         - from: LICENSE
           to: .
@@ -33,21 +33,8 @@ spec:
           arch: arm64
 
     - bin: kubectl-plugin-arcane
-      uri: https://github.com/SneaksAndData/kubectl-plugin-arcane/releases/download/v0.1.11/kubectl-plugin-arcane_0.1.11_linux_386.tar.gz
-      sha256: a99555c4b13b70e02edf836f72196b89bfbc5cc1b866f1e34adcf2513b84197f
-      files:
-        - from: LICENSE
-          to: .
-        - from: kubectl-plugin-arcane
-          to: .
-      selector:
-        matchLabels:
-          os: linux
-          arch: i386
-
-    - bin: kubectl-plugin-arcane
-      uri: https://github.com/SneaksAndData/kubectl-plugin-arcane/releases/download/v0.1.11/kubectl-plugin-arcane_0.1.11_linux_amd64.tar.gz
-      sha256: c3cb88360227aeef9255d858868646de1e7fab33ae8321a73f98c23e375f506b
+      uri: https://github.com/SneaksAndData/kubectl-plugin-arcane/releases/download/v0.1.12/kubectl-plugin-arcane_0.1.12_linux_amd64.tar.gz
+      sha256: 4dfdb200bc89677f88ac51a2dfc570cb2ed6d7c0dd40e38e2f9648e9ef7650f7
       files:
         - from: LICENSE
           to: .
@@ -59,9 +46,9 @@ spec:
           arch: amd64
 
     - bin: kubectl-plugin-arcane
-      uri: https://github.com/SneaksAndData/kubectl-plugin-arcane/releases/download/v0.1.11/kubectl-plugin-arcane_0.1.11_windows_amd64.tar.gz
-      sha256: 60c08c14f5f7d7c3e77c5c2c0b05016f12b0aafcada2381b87a417e2c2e25f3b
-      files:
+      uri:
+      sha256: 6a9319f1586bcaed1e84af960ac57f30c8795d0540c9ba3c5ec6b4f73ed7b612
+      files: https://github.com/SneaksAndData/kubectl-plugin-arcane/releases/download/v0.1.12/kubectl-plugin-arcane_0.1.12_windows_amd64.tar.gz
         - from: LICENSE
           to: .
         - from: kubectl-plugin-arcane
